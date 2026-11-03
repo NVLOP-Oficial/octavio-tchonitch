@@ -171,9 +171,13 @@ footer img{height:36px;opacity:.4}
 .sc-opt span{font-family:'Playfair Display',serif;font-style:italic;color:var(--accent)}
 .sc-opt:hover{border-color:var(--accent);color:var(--text)}
 .sc-opt.act{border-color:var(--accent);color:var(--text);background:rgba(200,160,240,.1)}
-.links-row{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px}
-.links-row a{padding:11px 22px;border:1px solid var(--border);border-radius:2px;color:var(--accent);font-size:11px;letter-spacing:3px;text-transform:uppercase;text-decoration:none;transition:all .2s}
-.links-row a:hover{border-color:var(--accent);background:rgba(200,160,240,.08)}
+.mtabs{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:22px}
+.mtab{padding:11px 22px;background:var(--card);border:1px solid var(--border);border-radius:2px;color:var(--dim);font:inherit;font-size:11px;letter-spacing:3px;text-transform:uppercase;cursor:pointer;transition:all .2s}
+.mtab:hover{border-color:var(--accent);color:var(--text)}
+.mtab.act{border-color:var(--accent);color:var(--accent);background:rgba(200,160,240,.1)}
+.mpanel{display:none}.mpanel.act{display:block}
+.sc-profile{display:inline-block;margin-top:22px;font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--accent);text-decoration:none}
+.yt-box{position:relative;padding-top:56.25%}.yt-box iframe{position:absolute;inset:0;width:100%;height:100%;border-radius:2px}
 .booking-title{font-family:'Playfair Display',serif;font-weight:700;font-size:clamp(40px,6vw,72px);margin-bottom:14px}
 .booking-cards{display:flex;justify-content:center;flex-wrap:wrap;gap:16px;margin-top:34px}
 .booking-card{display:flex;flex-direction:column;gap:8px;min-width:300px;padding:22px 32px;background:var(--card);border:1px solid var(--border);border-radius:2px;text-decoration:none;text-align:left;transition:border-color .2s}
@@ -266,16 +270,20 @@ footer img{height:36px;opacity:.4}
   <div class="sec-label">Música</div>
   <div class="music-embed">
     
-    <div class="sc-box" data-sc>
-      <iframe width="100%" height="352" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy" src="https://open.spotify.com/embed/album/4GUnadrPFiYOUvkQZQ09Yx?theme=0"></iframe>
-      <div class="sc-list"><button type="button" class="sc-opt act" data-src="https://open.spotify.com/embed/album/4GUnadrPFiYOUvkQZQ09Yx?theme=0"><span>01</span>EP Focus</button><button type="button" class="sc-opt" data-src="https://open.spotify.com/embed/track/1cbEXfVbEfkwpwJn0T0Imf?theme=0"><span>02</span>Confesse</button><button type="button" class="sc-opt" data-src="https://open.spotify.com/embed/track/5rmQuk5aJjyzuqoLGOQmFC?theme=0"><span>03</span>The Dream of Life</button><button type="button" class="sc-opt" data-src="https://open.spotify.com/embed/track/1SkHipATy3m2RdCLa0s48M?theme=0"><span>04</span>Twinz</button></div>
+    <div class="mtabs" role="tablist">
+      <button type="button" class="mtab act" data-p="sp">Spotify</button>
+      <button type="button" class="mtab" data-p="bp">Beatport</button>
+      <button type="button" class="mtab" data-p="sc">SoundCloud</button>
+      <button type="button" class="mtab" data-p="yt">YouTube</button>
     </div>
-    <div class="links-row">
-      <a href="https://open.spotify.com/artist/5xlEriO0f1swlprMuOabCs" target="_blank" rel="noopener">Spotify ↗</a>
-      <a href="https://www.beatport.com/artist/octavio-tchonitch/2298141" target="_blank" rel="noopener">Beatport ↗</a>
-      <a href="https://on.soundcloud.com/wOujatxTU1exPoVbfT" target="_blank" rel="noopener">SoundCloud ↗</a>
-      <a href="https://youtube.com/@octaviotchonitch" target="_blank" rel="noopener">YouTube ↗</a>
-    </div>
+    <div class="mpanel act" data-p="sp"><div class="sc-box" data-sc>
+      <iframe width="100%" height="352" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy" data-src="https://open.spotify.com/embed/album/4GUnadrPFiYOUvkQZQ09Yx?theme=0"></iframe><div class="sc-list"><button type="button" class="sc-opt act" data-src="https://open.spotify.com/embed/album/4GUnadrPFiYOUvkQZQ09Yx?theme=0" data-h="352"><span>01</span>EP Focus</button><button type="button" class="sc-opt" data-src="https://open.spotify.com/embed/track/1cbEXfVbEfkwpwJn0T0Imf?theme=0" data-h="152"><span>02</span>Confesse</button><button type="button" class="sc-opt" data-src="https://open.spotify.com/embed/track/5rmQuk5aJjyzuqoLGOQmFC?theme=0" data-h="152"><span>03</span>The Dream of Life</button><button type="button" class="sc-opt" data-src="https://open.spotify.com/embed/track/1SkHipATy3m2RdCLa0s48M?theme=0" data-h="152"><span>04</span>Twinz</button></div></div><a class="sc-profile" href="https://open.spotify.com/artist/5xlEriO0f1swlprMuOabCs" target="_blank" rel="noopener">Ver perfil en Spotify ↗</a></div>
+    <div class="mpanel" data-p="bp"><div class="sc-box" data-sc>
+      <iframe width="100%" height="162" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy" data-src="https://embed.beatport.com/?id=30761369&type=track"></iframe><div class="sc-list"><button type="button" class="sc-opt act" data-src="https://embed.beatport.com/?id=30761369&type=track" data-h="162"><span>01</span>Blurred</button><button type="button" class="sc-opt" data-src="https://embed.beatport.com/?id=30761370&type=track" data-h="162"><span>02</span>Focus</button><button type="button" class="sc-opt" data-src="https://embed.beatport.com/?id=30235258&type=track" data-h="162"><span>03</span>Confesse</button><button type="button" class="sc-opt" data-src="https://embed.beatport.com/?id=26912767&type=track" data-h="162"><span>04</span>The Dream of Life</button><button type="button" class="sc-opt" data-src="https://embed.beatport.com/?id=27485119&type=track" data-h="162"><span>05</span>Twinz</button><button type="button" class="sc-opt" data-src="https://embed.beatport.com/?id=24266038&type=track" data-h="162"><span>06</span>Did It</button></div></div><a class="sc-profile" href="https://www.beatport.com/artist/octavio-tchonitch/2298141" target="_blank" rel="noopener">Ver artista en Beatport ↗</a></div>
+    <div class="mpanel" data-p="sc"><div class="sc-box">
+      <iframe width="100%" height="450" scrolling="no" frameborder="0" allow="autoplay" loading="lazy" data-src="https://w.soundcloud.com/player/?url=https%3A%2F%2Fsoundcloud.com%2Foctavio-tchonitch-1&color=%23c8a0f0&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=false&visual=false"></iframe></div><a class="sc-profile" href="https://on.soundcloud.com/wOujatxTU1exPoVbfT" target="_blank" rel="noopener">Ver perfil en SoundCloud ↗</a></div>
+    <div class="mpanel" data-p="yt"><div class="sc-box yt-box">
+      <iframe width="100%" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" allowfullscreen loading="lazy" data-src="https://www.youtube.com/embed/videoseries?list=UUx5cbpcuxCqN_j_pHzhafJA"></iframe></div><a class="sc-profile" href="https://youtube.com/@octaviotchonitch" target="_blank" rel="noopener">Ver canal de YouTube ↗</a></div>
 
   </div>
 </div>
@@ -356,7 +364,22 @@ footer img{height:36px;opacity:.4}
     show(0); tick();
   });
 })();
-</script><script>document.querySelectorAll('[data-sc]').forEach(function (box) { var fr = box.querySelector('iframe'); box.querySelectorAll('.sc-opt').forEach(function (b) { b.addEventListener('click', function () { box.querySelectorAll('.sc-opt').forEach(function (o) { o.classList.remove('act'); }); b.classList.add('act'); fr.height = b.dataset.src.indexOf('/album/') > -1 ? 352 : 152; fr.src = b.dataset.src; }); }); });</script>
+</script><script>(function () {
+  function load(p) { var f = p.querySelector('iframe'); if (f && !f.src) f.src = f.dataset.src; }
+  var tabs = document.querySelectorAll('.mtab'), panels = document.querySelectorAll('.mpanel');
+  tabs.forEach(function (t) { t.addEventListener('click', function () {
+    tabs.forEach(function (x) { x.classList.toggle('act', x === t); });
+    panels.forEach(function (p) { var on = p.dataset.p === t.dataset.p; p.classList.toggle('act', on); if (on) load(p); });
+  }); });
+  document.querySelectorAll('[data-sc]').forEach(function (box) {
+    var fr = box.querySelector('iframe');
+    box.querySelectorAll('.sc-opt').forEach(function (b) { b.addEventListener('click', function () {
+      box.querySelectorAll('.sc-opt').forEach(function (o) { o.classList.remove('act'); });
+      b.classList.add('act'); fr.height = b.dataset.h; fr.src = b.dataset.src;
+    }); });
+  });
+  var first = document.querySelector('.mpanel.act'); if (first) load(first);
+})();</script>
 <div class="draft-tag">Borrador · Presskit</div>
 </body>
 </html>
