@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:image" content="https://ecosistemanvlop.com/epk/octavio-tchonitch/assets/og.jpg">
+<meta name="robots" content="noindex">
+<meta property="og:url" content="https://ecosistemanvlop.com/epk/octavio-tchonitch/">
+<title>OCTAVIO TCHONITCH — DJ · Productor</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#0d1020;
+  --card:#161a30;
+  --text:#e8e0f5;
+  --dim:rgba(232,224,245,0.55);
+  --accent:#c8a0f0;
+  --border:rgba(232,224,245,0.1);
+}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;overflow-x:hidden}
+
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:24px 48px;background:linear-gradient(to bottom,rgba(13,16,32,.92),transparent)}
+.nav-logo{font-family:'Playfair Display',serif;font-style:italic;font-size:22px;color:var(--text);text-decoration:none}
+.nav-links{display:flex;gap:32px}
+.nav-links a{color:var(--dim);font-size:12px;letter-spacing:2px;text-transform:uppercase;text-decoration:none;transition:color .2s}
+.nav-links a:hover{color:var(--text)}
+.nav-booking{padding:10px 22px;border:1px solid var(--accent);color:var(--accent);font-size:11px;letter-spacing:3px;text-transform:uppercase;text-decoration:none;transition:all .2s;border-radius:2px}
+.nav-booking:hover{background:var(--accent);color:var(--bg)}
+
+.hero{position:relative;height:100vh;display:flex;align-items:flex-end;overflow:hidden}
+.hero-bg{position:absolute;inset:0;background:url('assets/hero.jpg') center/cover no-repeat;animation:zoom 8s ease-out forwards}
+@keyframes zoom{from{transform:scale(1.06)}to{transform:scale(1)}}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(13,16,32,1) 0%,rgba(13,16,32,.45) 45%,rgba(13,16,32,.15) 100%)}
+.hero-content{position:relative;z-index:2;padding:0 48px 72px;animation:fadeUp 1.2s ease-out .3s both}
+@keyframes fadeUp{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:translateY(0)}}
+.hero-eyebrow{font-style:italic;font-family:'Playfair Display',serif;font-size:15px;letter-spacing:3px;color:var(--accent);margin-bottom:14px}
+.hero-name{font-family:'Playfair Display',serif;font-weight:700;font-size:clamp(64px,10vw,140px);line-height:.95;letter-spacing:-1px}
+.hero-sub{margin-top:20px;font-size:13px;letter-spacing:2px;color:var(--dim);text-transform:uppercase;font-weight:300}
+.hero-actions{margin-top:32px;display:flex;gap:14px;align-items:center}
+.btn-primary{padding:14px 32px;background:var(--accent);color:var(--bg);font-size:11px;letter-spacing:3px;text-transform:uppercase;text-decoration:none;font-weight:500;border-radius:2px;transition:opacity .2s}
+.btn-primary:hover{opacity:.85}
+.btn-ghost{padding:14px 32px;border:1px solid var(--border);color:var(--text);font-size:11px;letter-spacing:3px;text-transform:uppercase;text-decoration:none;border-radius:2px;transition:border-color .2s}
+.btn-ghost:hover{border-color:var(--text)}
+
+.section{padding:90px 48px;max-width:1200px;margin:0 auto}
+.sec-label{font-family:'Playfair Display',serif;font-style:italic;font-size:16px;color:var(--accent);margin-bottom:48px;display:flex;align-items:center;gap:16px}
+.sec-label::after{content:'';flex:1;height:1px;background:var(--border)}
+
+.bio-grid{display:grid;grid-template-columns:1.2fr 1fr;gap:80px;align-items:start}
+.bio-text{font-size:17px;line-height:1.85;color:rgba(232,224,245,.78);font-weight:300}
+.bio-text p+p{margin-top:22px}
+.bio-aside{display:flex;flex-direction:column;gap:28px}
+.bio-stat{border-top:1px solid var(--border);padding-top:18px}
+.bio-stat-label{font-family:'Playfair Display',serif;font-style:italic;font-size:13px;color:var(--accent);margin-bottom:5px}
+.bio-stat-value{font-size:14px;color:var(--text);font-weight:300}
+.bio-stat-value a{color:var(--accent);text-decoration:none}
+
+.shows-full{padding:0;max-width:100%}
+.shows-inner{padding:90px 48px 0;max-width:1200px;margin:0 auto}
+.event-block{margin-top:56px}
+.event-header{display:flex;align-items:baseline;gap:20px;margin-bottom:16px;padding-bottom:14px;border-bottom:1px solid var(--border)}
+.event-name{font-family:'Playfair Display',serif;font-weight:600;font-size:32px;color:var(--text)}
+.event-date{font-style:italic;font-family:'Playfair Display',serif;font-size:14px;color:var(--accent)}
+.event-gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:3px}
+.event-gallery img{width:100%;aspect-ratio:4/3;object-fit:cover;filter:brightness(.85) saturate(1.1);transition:filter .5s}
+.event-gallery img:hover{filter:brightness(1) saturate(1.2)}
+
+.gallery-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:8px}
+.gal-item{position:relative;aspect-ratio:3/4;overflow:hidden;border:1px solid var(--border);transition:all .3s ease;border-radius:2px}
+.gal-item:hover{border-color:var(--accent);transform:scale(1.015)}
+.gal-item img{width:100%;height:100%;object-fit:cover;display:block;filter:brightness(.9) saturate(1.1);transition:filter .4s}
+.gal-item:hover img{filter:brightness(1) saturate(1.2)}
+.gal-label{position:absolute;top:10px;left:10px;color:var(--accent);padding:3px 8px;font-size:11px;font-style:italic;font-family:'Playfair Display',serif;background:rgba(13,16,32,.55);border:1px solid var(--border);backdrop-filter:blur(4px);border-radius:2px}
+
+.music-embed{margin-top:40px;opacity:.92}
+
+.rider-type-label{font-family:'Playfair Display',serif;font-style:italic;font-size:16px;color:var(--text);margin-bottom:20px;display:flex;align-items:center;gap:12px}
+.rider-type-label span{color:var(--dim);font-size:12px;font-style:normal;font-family:'DM Sans',sans-serif;letter-spacing:1px;font-weight:300}
+.rider-type-label::after{content:'';flex:1;height:1px;background:var(--border)}
+.rider-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:3px;margin-bottom:48px}
+.rider-card{background:var(--card);border:1px solid var(--border);overflow:hidden;transition:border-color .2s;border-radius:2px}
+.rider-card:hover{border-color:rgba(200,160,240,.4)}
+.rider-card-img{width:100%;height:160px;background:#0a0d1c;border-bottom:1px solid var(--border);overflow:hidden}
+.rider-card-img img{width:100%;height:100%;object-fit:contain;padding:18px}
+.rider-card-body{padding:18px 20px}
+.rider-card-tag{font-family:'Playfair Display',serif;font-style:italic;font-size:12px;color:var(--accent);margin-bottom:6px}
+.rider-card-name{font-family:'Playfair Display',serif;font-weight:600;font-size:16px;color:var(--text);margin-bottom:4px}
+.rider-card-desc{font-size:12px;color:var(--dim);font-weight:300;line-height:1.5}
+.rider-download{display:inline-block;margin-top:8px;padding:14px 30px;border:1px solid var(--accent);color:var(--accent);font-size:11px;letter-spacing:3px;text-transform:uppercase;text-decoration:none;transition:all .2s}
+.rider-download:hover{background:var(--accent);color:var(--bg)}
+
+.contact-wrap{text-align:center;padding:90px 48px;border-top:1px solid var(--border)}
+.contact-title{font-family:'Playfair Display',serif;font-weight:700;font-size:clamp(48px,7vw,96px);margin-bottom:14px}
+.contact-sub{color:var(--dim);font-size:14px;font-weight:300;margin-bottom:36px}
+.contact-email{font-size:20px;color:var(--accent);text-decoration:none;border-bottom:1px solid rgba(200,160,240,.4);padding-bottom:3px;transition:opacity .2s}
+.contact-email:hover{opacity:.7}
+.socials{display:flex;justify-content:center;gap:28px;margin-top:36px;flex-wrap:wrap}
+.socials a{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--dim);text-decoration:none;transition:color .2s}
+.socials a:hover{color:var(--text)}
+
+footer{padding:28px 48px;display:flex;align-items:center;justify-content:space-between;border-top:1px solid var(--border)}
+footer p{font-size:11px;color:rgba(232,224,245,.3);letter-spacing:1px}
+footer img{height:36px;opacity:.4}
+
+@media(max-width:768px){
+  nav{padding:18px 20px}
+  .nav-links{display:none}
+  .nav-logo{font-size:18px}
+  .nav-booking{padding:8px 16px;font-size:10px}
+  .hero-content{padding:0 24px 48px}
+  .hero-actions{flex-wrap:wrap}
+  .section{padding:64px 24px}
+  .bio-grid{grid-template-columns:1fr;gap:40px}
+  .shows-inner{padding:64px 24px 0}
+  .event-gallery{grid-template-columns:1fr 1fr}
+  .gallery-grid{grid-template-columns:1fr 1fr;gap:8px}
+  .rider-cards{grid-template-columns:1fr 1fr}
+  .contact-wrap{padding:64px 24px}
+  footer{flex-direction:column;gap:14px;text-align:center;padding:24px}
+}
+
+/* nvlop-credit */
+.nvlop-credit{--nv-ink:var(--accent);--nv-dim:var(--dim);font-size:10px;display:inline-flex;align-items:center;gap:10px;text-decoration:none;text-transform:uppercase;white-space:nowrap;opacity:.85;transition:opacity .25s}
+.nvlop-credit .nv-by{font-size:.9em;letter-spacing:.24em;color:var(--nv-dim);font-weight:400}
+.nvlop-credit .nv-mark{width:11px;height:11px;position:relative;flex:none;color:var(--nv-ink)}
+.nvlop-credit .nv-mark::before,.nvlop-credit .nv-mark::after{content:"";position:absolute;inset:0}
+.nvlop-credit .nv-mark::before{border:1.5px solid currentColor;transform:rotate(45deg)}
+.nvlop-credit .nv-mark::after{background:currentColor;border-radius:50%;transform:scale(.45)}
+.nvlop-credit .nv-word{font-family:'Barlow Condensed','Arial Narrow',sans-serif;font-weight:900;font-size:1.55em;letter-spacing:.18em;line-height:1;color:var(--nv-ink);transition:letter-spacing .25s}
+.nvlop-credit:hover{opacity:1}
+.nvlop-credit:hover .nv-word{letter-spacing:.26em}
+
+.bio-photo{width:100%;display:block;border:1px solid var(--border);border-radius:2px}
+
+/* galeria rotativa */
+.rg-stage{position:relative;aspect-ratio:16/9;overflow:hidden;background:#07090f;border:1px solid var(--border);border-radius:2px}
+.rg-bg{position:absolute;inset:-12%;background-size:cover;background-position:center;filter:blur(38px) brightness(.45) saturate(1.35);opacity:0;transition:opacity 1.1s ease}
+.rg-img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;opacity:0;transition:opacity 1.1s ease}
+.rg-bg.on,.rg-img.on{opacity:1}
+.rg-img.on{animation:rgz 9s ease-out forwards}
+@keyframes rgz{from{transform:scale(1)}to{transform:scale(1.035)}}
+.rg-nav{position:absolute;top:50%;width:46px;height:46px;margin-top:-23px;border-radius:50%;border:1px solid var(--border);background:rgba(10,13,28,.55);backdrop-filter:blur(6px);color:var(--text);font-size:22px;line-height:1;cursor:pointer;opacity:0;transition:opacity .25s,border-color .25s;z-index:3}
+.rg-stage:hover .rg-nav,.rg-nav:focus-visible{opacity:1}
+.rg-nav:hover{border-color:var(--accent);color:var(--accent)}
+.rg-prev{left:16px}.rg-next{right:16px}
+.rg-count{position:absolute;left:18px;bottom:16px;z-index:3;font-family:'Playfair Display',serif;font-style:italic;font-size:15px;color:var(--dim);text-shadow:0 1px 8px rgba(0,0,0,.8)}
+.rg-count b{font-weight:400;color:var(--text);font-size:20px}
+.rg-bar{position:absolute;left:0;right:0;bottom:0;height:2px;background:rgba(255,255,255,.08);z-index:3}
+.rg-bar i{display:block;height:100%;width:0;background:var(--accent)}
+.rg.hov .rg-bar i{animation-play-state:paused!important}
+@keyframes rgbar{from{width:0}to{width:100%}}
+.rg-rail{display:flex;gap:6px;overflow-x:auto;margin-top:10px;padding:2px 0 8px;scrollbar-width:thin;scrollbar-color:var(--accent) transparent}
+.rg-th{flex:none;width:58px;height:76px;padding:0;border:1px solid transparent;border-radius:2px;background:var(--card);opacity:.5;cursor:pointer;overflow:hidden;transition:opacity .25s,border-color .25s}
+.rg-th img{width:100%;height:100%;object-fit:cover;display:block}
+.rg-th:hover{opacity:.85}
+.rg-th.act{opacity:1;border-color:var(--accent)}
+.rg-credit{margin-top:6px;font-family:'Playfair Display',serif;font-style:italic;font-size:13px;color:var(--dim)}
+.rg-credit a{color:var(--accent);text-decoration:none}
+@media(max-width:768px){.rg-stage{aspect-ratio:4/5}.rg-nav{opacity:1;width:38px;height:38px;margin-top:-19px;font-size:18px}.rg-prev{left:8px}.rg-next{right:8px}.rg-th{width:48px;height:64px}}
+@media(prefers-reduced-motion:reduce){.rg-img.on{animation:none}.rg-img,.rg-bg{transition:none}}
+
+.hero-bg{background-position:center 30%}
+.bio-text strong{color:var(--text);font-weight:500}
+.bio-quote{margin-top:34px;padding-left:22px;border-left:2px solid var(--accent);font-family:'Playfair Display',serif;font-style:italic;font-size:20px;line-height:1.6;color:var(--text)}
+.sc-box{max-width:760px}
+.sc-box iframe{display:block;border:0;border-radius:12px;background:var(--card)}
+.sc-list{display:flex;gap:8px;margin-top:10px;flex-wrap:wrap}
+.sc-opt{display:flex;align-items:center;gap:10px;padding:10px 18px;background:var(--card);border:1px solid var(--border);border-radius:2px;color:var(--dim);font:inherit;font-size:13px;cursor:pointer;transition:all .2s}
+.sc-opt span{font-family:'Playfair Display',serif;font-style:italic;color:var(--accent)}
+.sc-opt:hover{border-color:var(--accent);color:var(--text)}
+.sc-opt.act{border-color:var(--accent);color:var(--text);background:rgba(200,160,240,.1)}
+.links-row{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px}
+.links-row a{padding:11px 22px;border:1px solid var(--border);border-radius:2px;color:var(--accent);font-size:11px;letter-spacing:3px;text-transform:uppercase;text-decoration:none;transition:all .2s}
+.links-row a:hover{border-color:var(--accent);background:rgba(200,160,240,.08)}
+.booking-title{font-family:'Playfair Display',serif;font-weight:700;font-size:clamp(40px,6vw,72px);margin-bottom:14px}
+.booking-cards{display:flex;justify-content:center;flex-wrap:wrap;gap:16px;margin-top:34px}
+.booking-card{display:flex;flex-direction:column;gap:8px;min-width:300px;padding:22px 32px;background:var(--card);border:1px solid var(--border);border-radius:2px;text-decoration:none;text-align:left;transition:border-color .2s}
+.booking-card:hover{border-color:var(--accent)}
+.booking-card span{font-family:'Playfair Display',serif;font-style:italic;font-size:13px;color:var(--accent)}
+.booking-card strong{font-size:16px;font-weight:400;color:var(--text)}
+.draft-tag{position:fixed;right:16px;bottom:16px;z-index:150;padding:9px 14px;background:rgba(13,16,32,.9);border:1px solid var(--accent);color:var(--accent);font-size:10px;letter-spacing:3px;text-transform:uppercase;border-radius:2px}
+@media(max-width:768px){.booking-card{min-width:0;width:100%}.draft-tag{right:8px;bottom:8px;font-size:9px;letter-spacing:2px}}
+</style>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@900&text=NVLOP&display=swap" rel="stylesheet"><!-- nvlop-credit -->
+</head>
+<body>
+
+<nav>
+  <a href="#" class="nav-logo">OCTAVIO TCHONITCH</a>
+  <div class="nav-links">
+    <a href="#bio">Artista</a>
+    
+    <a href="#live">En cabina</a> <a href="#gallery">Estudio</a>
+    <a href="#music">Música</a>
+    <a href="#rider">Rider</a>
+    <a href="#booking">Booking</a>
+  </div>
+  <a href="#booking" class="nav-booking">Booking</a>
+</nav>
+
+<div class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <p class="hero-eyebrow">DJ · Productor · Ensenada · La Plata, Argentina</p>
+    <h1 class="hero-name">OCTAVIO<br>TCHONITCH</h1>
+    <p class="hero-sub">Progressive House · Organic House &nbsp;·&nbsp; Bohemian Groove · BAILEH</p>
+    <div class="hero-actions">
+      <a href="#music" class="btn-primary">Escuchar</a>
+      <a href="#booking" class="btn-ghost">Booking</a>
+    </div>
+  </div>
+</div>
+
+<div class="section" id="bio">
+  <div class="sec-label">Artista</div>
+  <div class="bio-grid">
+    <div class="bio-text">
+      
+      <p><strong>Octavio Tchonitch</strong> es DJ y productor de Ensenada, enfocado en el <strong>Progressive House y el Organic House</strong> con una fuerte identidad melódica. Su sonido se caracteriza por atmósferas hipnóticas, líneas de bajo profundas y una construcción progresiva que invita a un viaje emocional en cada set. Mantiene una estética elegante y sutil, marcada por detalles que dan profundidad y personalidad a su propuesta.</p>
+      <p>En cada presentación busca generar una experiencia única, construida a partir de texturas envolventes, armonías emotivas y una selección musical cuidadosa que conecta con la pista desde lo emocional y lo físico.</p>
+      <p>Pasó por cabinas como <strong>Zegre, Moscú (ex Pacha), Downtempo y La Biblioteca</strong>. Empezó junto a Joaco Vizcarra con el dúo <strong>BAILEH</strong>, proyecto que los llevó a grandes lugares y los formó como DJs y productores de eventos.</p>
+      <p>Como productor de eventos en La Plata creó <strong>Bohemian Groove</strong>, con DJs locales y un crecimiento constante; en sus últimas ediciones contó con figuras del progressive como <strong>Pablo Appe, Unai García y Gastón Sosa</strong>.</p>
+      <p>Como productor tiene tracks editados en sellos como <strong>Amithaba Label, Nicelecin Label, South America Avenue, Tunnel Label, Starlight Label, Equilibrio Records, FlugLab y Disolend Records</strong>.</p>
+      <div class="bio-quote">“Atmósferas hipnóticas, bajos profundos y un viaje emocional en cada set.”</div>
+    </div>
+    <div class="bio-aside"><img class="bio-photo" src="assets/aside.jpg" alt="Octavio Tchonitch" loading="lazy"></div>
+  </div>
+</div>
+
+
+
+<div class="section" id="live">
+  <div class="sec-label">Galería · En cabina</div>
+  <div class="rg" data-rg data-interval="3500">
+    <div class="rg-stage">
+      <div class="rg-bg"></div><div class="rg-bg"></div>
+      <img class="rg-img" alt=""><img class="rg-img" alt="">
+      <button class="rg-nav rg-prev" type="button" aria-label="Foto anterior">‹</button>
+      <button class="rg-nav rg-next" type="button" aria-label="Foto siguiente">›</button>
+      <div class="rg-count"><b>01</b> / 12</div>
+      <div class="rg-bar"><i></i></div>
+    </div>
+    <div class="rg-rail"><button class="rg-th" type="button" aria-label="Foto 1"><img src="assets/live/l001t.jpg" alt="" loading="lazy"></button><button class="rg-th" type="button" aria-label="Foto 2"><img src="assets/live/l002t.jpg" alt="" loading="lazy"></button><button class="rg-th" type="button" aria-label="Foto 3"><img src="assets/live/l003t.jpg" alt="" loading="lazy"></button><button class="rg-th" type="button" aria-label="Foto 4"><img src="assets/live/l004t.jpg" alt="" loading="lazy"></button><button class="rg-th" type="button" aria-label="Foto 5"><img src="assets/live/l005t.jpg" alt="" loading="lazy"></button><button class="rg-th" type="button" aria-label="Foto 6"><img src="assets/live/l006t.jpg" alt="" loading="lazy"></button><button class="rg-th" type="button" aria-label="Foto 7"><img src="assets/live/l007t.jpg" alt="" loading="lazy"></button><button class="rg-th" type="button" aria-label="Foto 8"><img src="assets/live/l008t.jpg" alt="" loading="lazy"></button><button class="rg-th" type="button" aria-label="Foto 9"><img src="assets/live/l009t.jpg" alt="" loading="lazy"></button><button class="rg-th" type="button" aria-label="Foto 10"><img src="assets/live/l010t.jpg" alt="" loading="lazy"></button><button class="rg-th" type="button" aria-label="Foto 11"><img src="assets/live/l011t.jpg" alt="" loading="lazy"></button><button class="rg-th" type="button" aria-label="Foto 12"><img src="assets/live/l012t.jpg" alt="" loading="lazy"></button></div>
+    <script type="application/json" class="rg-data">["assets/live/l001.jpg","assets/live/l002.jpg","assets/live/l003.jpg","assets/live/l004.jpg","assets/live/l005.jpg","assets/live/l006.jpg","assets/live/l007.jpg","assets/live/l008.jpg","assets/live/l009.jpg","assets/live/l010.jpg","assets/live/l011.jpg","assets/live/l012.jpg"]</script>
+  </div>
+</div><div class="section" id="gallery">
+  <div class="sec-label">Galería · Estudio</div>
+  <div class="rg" data-rg data-interval="3500">
+    <div class="rg-stage">
+      <div class="rg-bg"></div><div class="rg-bg"></div>
+      <img class="rg-img" alt=""><img class="rg-img" alt="">
+      <button class="rg-nav rg-prev" type="button" aria-label="Foto anterior">‹</button>
+      <button class="rg-nav rg-next" type="button" aria-label="Foto siguiente">›</button>
+      <div class="rg-count"><b>01</b> / 08</div>
+      <div class="rg-bar"><i></i></div>
+    </div>
+    <div class="rg-rail"><button class="rg-th" type="button" aria-label="Foto 1"><img src="assets/studio/s001t.jpg" alt="" loading="lazy"></button><button class="rg-th" type="button" aria-label="Foto 2"><img src="assets/studio/s002t.jpg" alt="" loading="lazy"></button><button class="rg-th" type="button" aria-label="Foto 3"><img src="assets/studio/s003t.jpg" alt="" loading="lazy"></button><button class="rg-th" type="button" aria-label="Foto 4"><img src="assets/studio/s004t.jpg" alt="" loading="lazy"></button><button class="rg-th" type="button" aria-label="Foto 5"><img src="assets/studio/s005t.jpg" alt="" loading="lazy"></button><button class="rg-th" type="button" aria-label="Foto 6"><img src="assets/studio/s006t.jpg" alt="" loading="lazy"></button><button class="rg-th" type="button" aria-label="Foto 7"><img src="assets/studio/s007t.jpg" alt="" loading="lazy"></button><button class="rg-th" type="button" aria-label="Foto 8"><img src="assets/studio/s008t.jpg" alt="" loading="lazy"></button></div>
+    <script type="application/json" class="rg-data">["assets/studio/s001.jpg","assets/studio/s002.jpg","assets/studio/s003.jpg","assets/studio/s004.jpg","assets/studio/s005.jpg","assets/studio/s006.jpg","assets/studio/s007.jpg","assets/studio/s008.jpg"]</script>
+  </div>
+</div>
+
+<div class="section" id="music">
+  <div class="sec-label">Música</div>
+  <div class="music-embed">
+    
+    <div class="sc-box" data-sc>
+      <iframe width="100%" height="352" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy" src="https://open.spotify.com/embed/album/4GUnadrPFiYOUvkQZQ09Yx?theme=0"></iframe>
+      <div class="sc-list"><button type="button" class="sc-opt act" data-src="https://open.spotify.com/embed/album/4GUnadrPFiYOUvkQZQ09Yx?theme=0"><span>01</span>EP Focus</button><button type="button" class="sc-opt" data-src="https://open.spotify.com/embed/track/1cbEXfVbEfkwpwJn0T0Imf?theme=0"><span>02</span>Confesse</button><button type="button" class="sc-opt" data-src="https://open.spotify.com/embed/track/5rmQuk5aJjyzuqoLGOQmFC?theme=0"><span>03</span>The Dream of Life</button><button type="button" class="sc-opt" data-src="https://open.spotify.com/embed/track/1SkHipATy3m2RdCLa0s48M?theme=0"><span>04</span>Twinz</button></div>
+    </div>
+    <div class="links-row">
+      <a href="https://open.spotify.com/artist/5xlEriO0f1swlprMuOabCs" target="_blank" rel="noopener">Spotify ↗</a>
+      <a href="https://www.beatport.com/artist/octavio-tchonitch/2298141" target="_blank" rel="noopener">Beatport ↗</a>
+      <a href="https://on.soundcloud.com/wOujatxTU1exPoVbfT" target="_blank" rel="noopener">SoundCloud ↗</a>
+      <a href="https://youtube.com/@octaviotchonitch" target="_blank" rel="noopener">YouTube ↗</a>
+    </div>
+
+  </div>
+</div>
+
+<div class="section" id="rider">
+  <div class="sec-label">Rider técnico</div>
+
+  <div class="rider-type-label">Rider principal <span>CDJ-3000 x3 · DJM-V10</span></div>
+  
+
+  <div class="rider-type-label" style="margin-top:12px">Rider alternativo <span>CDJ-2000NXS2 x3 · DJM-A9 · monitoreo en cabina</span></div>
+  
+  <a class="rider-download" href="OCTAVIO_TCHONITCH_RIDER_TECNICO.pdf" target="_blank">↓ Descargar rider técnico (PDF)</a>
+</div>
+
+<div class="contact-wrap" id="booking">
+  <h2 class="booking-title">Booking</h2>
+  <p class="contact-sub">Bookings, colaboraciones y consultas</p>
+  <div class="booking-cards">
+    <a class="booking-card" href="https://www.instagram.com/octitchonitch" target="_blank" rel="noopener"><span>Instagram · Mensaje directo</span><strong>@octitchonitch ↗</strong></a>
+  </div>
+  <div class="socials">
+    <a href="https://www.instagram.com/octitchonitch" target="_blank">Instagram</a>
+    <a href="https://open.spotify.com/artist/5xlEriO0f1swlprMuOabCs" target="_blank">Spotify</a>
+    <a href="https://on.soundcloud.com/wOujatxTU1exPoVbfT" target="_blank">SoundCloud</a>
+    <a href="https://youtube.com/@octaviotchonitch" target="_blank">YouTube</a>
+    <a href="https://www.beatport.com/artist/octavio-tchonitch/2298141" target="_blank">Beatport</a>
+  </div>
+</div>
+
+<footer>
+  <p>© 2026 OCTAVIO TCHONITCH · Ensenada · La Plata, Argentina</p>
+  
+<a class="nvlop-credit" href="https://ecosistemanvlop.com" target="_blank" rel="noopener" aria-label="Powered by NVLOP"><span class="nv-by">Powered by</span><i class="nv-mark"></i><b class="nv-word">NVLOP</b></a></footer>
+
+<script>
+(function () {
+  var reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+  document.querySelectorAll('[data-rg]').forEach(function (root) {
+    var data = JSON.parse(root.querySelector('.rg-data').textContent);
+    var imgs = root.querySelectorAll('.rg-img'), bgs = root.querySelectorAll('.rg-bg');
+    var ths = root.querySelectorAll('.rg-th'), rail = root.querySelector('.rg-rail');
+    var num = root.querySelector('.rg-count b'), bar = root.querySelector('.rg-bar i');
+    var iv = +root.dataset.interval || 3500, cur = -1, front = 1, timer = null, visible = false;
+    function pad(n) { return (n < 10 ? '0' : '') + n; }
+    function show(i) {
+      i = (i + data.length) % data.length;
+      if (i === cur) return;
+      var n = 1 - front, im = imgs[n];
+      im.onload = function () {
+        im.onload = null;
+        im.classList.add('on'); bgs[n].classList.add('on');
+        imgs[front].classList.remove('on'); bgs[front].classList.remove('on');
+        front = n;
+      };
+      im.src = data[i];
+      bgs[n].style.backgroundImage = 'url("' + data[i] + '")';
+      if (cur > -1) ths[cur].classList.remove('act');
+      cur = i; ths[i].classList.add('act'); num.textContent = pad(i + 1);
+      rail.scrollTo({ left: ths[i].offsetLeft - rail.clientWidth / 2 + ths[i].clientWidth / 2, behavior: 'smooth' });
+      var p = new Image(); p.src = data[(i + 1) % data.length];
+      bar.style.animation = 'none'; void bar.offsetWidth;
+      if (!reduce) bar.style.animation = 'rgbar ' + iv + 'ms linear forwards';
+    }
+    function tick() {
+      clearTimeout(timer);
+      if (reduce || !visible || root.classList.contains('hov')) return;
+      timer = setTimeout(function () { show(cur + 1); tick(); }, iv);
+    }
+    function go(i) { show(i); tick(); }
+    root.querySelector('.rg-prev').addEventListener('click', function () { go(cur - 1); });
+    root.querySelector('.rg-next').addEventListener('click', function () { go(cur + 1); });
+    ths.forEach(function (t, i) { t.addEventListener('click', function () { go(i); }); });
+    root.addEventListener('keydown', function (e) { if (e.key === 'ArrowLeft') go(cur - 1); if (e.key === 'ArrowRight') go(cur + 1); });
+    if ('IntersectionObserver' in window) {
+      new IntersectionObserver(function (es) { visible = es[0].isIntersecting; if (visible) { bar.style.animation = 'none'; void bar.offsetWidth; if (!reduce) bar.style.animation = 'rgbar ' + iv + 'ms linear forwards'; } tick(); }, { threshold: .25 }).observe(root);
+    } else { visible = true; }
+    show(0); tick();
+  });
+})();
+</script><script>document.querySelectorAll('[data-sc]').forEach(function (box) { var fr = box.querySelector('iframe'); box.querySelectorAll('.sc-opt').forEach(function (b) { b.addEventListener('click', function () { box.querySelectorAll('.sc-opt').forEach(function (o) { o.classList.remove('act'); }); b.classList.add('act'); fr.height = b.dataset.src.indexOf('/album/') > -1 ? 352 : 152; fr.src = b.dataset.src; }); }); });</script>
+<div class="draft-tag">Borrador · Presskit</div>
+</body>
+</html>
